@@ -6,6 +6,8 @@ import mkm.example.testtask.repo.UserRepo;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -17,4 +19,8 @@ public class UserService {
         userRepo.save(userEntity);
     }
 
+    public List<UserEntity> getAll() {
+
+        return userRepo.findAll();
+    }
 }
